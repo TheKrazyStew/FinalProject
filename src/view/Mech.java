@@ -2,12 +2,18 @@ package view;
 
 public class Mech {
 
-	private String name;
-	private int hp, atk, def, shield, move, speed, xPos, yPos;
+	private String name, typeName;
+	private int hp, atk, def, shield, move, speed, xPos, yPos, type;
 	private boolean isFlying;
 
+	/* ************* *
+	 * Mech Type IDs *
+	 * 0 = Light     *
+	 * 1 = Heavy     *
+	 * 2 = Artillery *
+	 * ************* */
 
-	public Mech(String name, int hp, int atk, int def, int shield,
+	public Mech(String name, int type, int hp, int atk, int def, int shield,
 			int move, int speed, boolean isFlying){
 
 		this.name = name;
@@ -20,6 +26,22 @@ public class Mech {
 		this.isFlying = isFlying;
 		xPos = 0;
 		yPos = 0;
+
+		switch(type){
+
+		case(0):
+			typeName = "LIGHT";
+		break;
+		case(1):
+			typeName = "HEAVY";
+		break;
+		case(2):
+			typeName = "ARTILLERY";
+		break;
+		default:
+			break;
+
+		}
 
 	}
 
@@ -89,20 +111,21 @@ public class Mech {
 
 	public String toString(){
 
-		String type;
+		String fly;
 		if(isFlying) {
 
-			type = "FLIER";
+			fly = "TRUE";
 
 		} else {
 
-			type = "GROUNDED";
+			fly = "FALSE";
 
 		}
 
 		return "UNIT STATS:\n"
 		+ "NAME: " + name + "\n"
-		+ "TYPE: " + type + "\n"
+		+ "TYPE:" + typeName + "\n"
+		+ "FLYING: " + fly + "\n"
 		+ "HP: " + hp + "\n"
 		+ "ATTACK: " + atk + "\n"
 		+ "ARMOR: " + def + "\n"
