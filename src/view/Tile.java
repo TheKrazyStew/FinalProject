@@ -2,7 +2,7 @@ package view;
 import java.awt.Color;
 
 public class Tile {
-	@SuppressWarnings("unused")
+
 	private int defMod, accMod, evdMod;
 	private String name;
 

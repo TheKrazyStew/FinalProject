@@ -17,7 +17,7 @@ public class World {
 		this.name = name;
 		this.size = size;
 		map = new Tile[size][size];
-		
+
 	}
 
 	public World(String name, Tile[][] map) {
@@ -28,8 +28,12 @@ public class World {
 
 	public Tile[][] generate(ArrayList<Tile> genList){
 		Tile[][] genMap = new Tile[size][size];
-		for(int i = 0; i < genList.size(); i++){
-			
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				int randomTerrainIndex = (int)(genList.size() * Math.random());
+				Tile randomTile = genList.get(randomTerrainIndex);
+				genMap[i][j] = randomTile; 
+			}
 		}
 		return genMap;
 
