@@ -36,7 +36,6 @@ public class World {
 	}
 
 	public String toString(){
-		return String.format("",size);
+		return String.format("%s [&d x %d]",name, size, size);
 	}
-
 }
