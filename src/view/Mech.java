@@ -3,7 +3,7 @@ package view;
 public class Mech {
 
 	private String name, typeName;
-	private int hp, atk, def, shield, move, speed, xPos, yPos, type;
+	private int hp, atk, def, shield, move, speed, xPos, yPos, type, evade;
 	private boolean isFlying;
 
 	/* ************* *
@@ -14,7 +14,7 @@ public class Mech {
 	 * ************* */
 
 	public Mech(String name, int type, int hp, int atk, int def, int shield,
-			int move, int speed, boolean isFlying){
+			int move, int speed, int evade, boolean isFlying){
 
 		this.name = name;
 		this.hp = hp;
@@ -24,6 +24,7 @@ public class Mech {
 		this.move = move;
 		this.speed = speed;
 		this.isFlying = isFlying;
+		this.evade = evade;
 		xPos = 0;
 		yPos = 0;
 
