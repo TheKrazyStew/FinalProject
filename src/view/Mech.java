@@ -3,7 +3,7 @@ package view;
 public class Mech {
 
 	private String name, typeName;
-	private int hp, atk, def, shield, move, speed, xPos, yPos, type, evade;
+	private int hp, atk, def, shield, move, xPos, yPos, type, evade, atkRange;
 	private boolean isFlying;
 
 	/* ************* *
@@ -14,7 +14,7 @@ public class Mech {
 	 * ************* */
 
 	public Mech(String name, int type, int hp, int atk, int def, int shield,
-			int move, int speed, int evade, boolean isFlying){
+			int move, int evade, boolean isFlying){
 
 		this.name = name;
 		this.hp = hp;
@@ -22,7 +22,6 @@ public class Mech {
 		this.def = def;
 		this.shield = shield;
 		this.move = move;
-		this.speed = speed;
 		this.isFlying = isFlying;
 		this.evade = evade;
 		xPos = 0;
@@ -94,12 +93,44 @@ public class Mech {
 		this.move = move;
 	}
 
-	public int getSpeed() {
-		return speed;
+	public int getxPos() {
+		return xPos;
 	}
 
-	public void setSpeed(int speed) {
-		this.speed = speed;
+	public void setxPos(int xPos) {
+		this.xPos = xPos;
+	}
+
+	public int getyPos() {
+		return yPos;
+	}
+
+	public void setyPos(int yPos) {
+		this.yPos = yPos;
+	}
+
+	public int getEvade() {
+		return evade;
+	}
+
+	public void setEvade(int evade) {
+		this.evade = evade;
+	}
+
+	public int getAtkRange() {
+		return atkRange;
+	}
+
+	public void setAtkRange(int atkRange) {
+		this.atkRange = atkRange;
+	}
+
+	public String getTypeName() {
+		return typeName;
+	}
+
+	public int getType() {
+		return type;
 	}
 
 	public boolean isFlying() {
@@ -132,7 +163,35 @@ public class Mech {
 		+ "ARMOR: " + def + "\n"
 		+ "SHIELD: " + shield + "\n"
 		+ "MOVEMENT: " + move + "\n"
-		+ "SPEED: " + speed;
+		+ "RANGE: " + atkRange;
+
+	}
+
+	public int takeDamageDef(Mech o){
+
+		int dmg = 0;
+
+		if(o.getAtk() - this.getDef() > dmg){
+
+			dmg = o.getAtk() - this.getDef();
+
+		}
+
+		return dmg;
+
+	}
+
+	public int takeDamageShield(Mech o){
+
+		int dmg = 0;
+
+		if(o.getAtk() - this.getDef() > dmg){
+
+			dmg = o.getAtk() - this.getDef();
+
+		}
+
+		return dmg;
 
 	}
 
