@@ -23,4 +23,7 @@ public class Tile {
 		this.color = color;
 		this.name=name;
 	}
+	public Color getColor() {
+		return color;
+	}
 }

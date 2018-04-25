@@ -26,6 +26,22 @@ public class World {
 		size = map.length;
 	}
 
+	public int getSize() {
+		return size;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Tile[][] getMap() {
+		return map;
+	}
+
 	public Tile[][] generate(ArrayList<Tile> genList){
 		Tile[][] genMap = new Tile[size][size];
 		for (int i = 0; i < size; i++) {
