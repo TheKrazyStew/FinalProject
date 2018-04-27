@@ -2,46 +2,22 @@ package view;
 
 public class Mech {
 
-	private String name, typeName;
-	private int hp, atk, def, shield, move, xPos, yPos, type, evade, atkRange;
+	private String name;
+	private int hp, atk, def, shield, move, xPos, yPos, evade, atkRange;
 	private boolean isFlying;
 
-	/* ************* *
-	 * Mech Type IDs *
-	 * 0 = Light     *
-	 * 1 = Heavy     *
-	 * 2 = Artillery *
-	 * ************* */
-
-	public Mech(String name, int type, int hp, int atk, int def, int shield,
-			int move, int evade, boolean isFlying){
+	public Mech(String name, int hp, int atk, int def, int move, int evade,
+			boolean isFlying){
 
 		this.name = name;
 		this.hp = hp;
 		this.atk = atk;
 		this.def = def;
-		this.shield = shield;
 		this.move = move;
 		this.isFlying = isFlying;
 		this.evade = evade;
 		xPos = 0;
 		yPos = 0;
-
-		switch(type){
-
-		case(0):
-			typeName = "LIGHT";
-		break;
-		case(1):
-			typeName = "HEAVY";
-		break;
-		case(2):
-			typeName = "ARTILLERY";
-		break;
-		default:
-			break;
-
-		}
 
 	}
 
@@ -125,14 +101,6 @@ public class Mech {
 		this.atkRange = atkRange;
 	}
 
-	public String getTypeName() {
-		return typeName;
-	}
-
-	public int getType() {
-		return type;
-	}
-
 	public boolean isFlying() {
 		return isFlying;
 	}
@@ -146,17 +114,16 @@ public class Mech {
 		String fly;
 		if(isFlying) {
 
-			fly = "TRUE";
+			fly = "YES";
 
 		} else {
 
-			fly = "FALSE";
+			fly = "NO";
 
 		}
 
 		return "UNIT STATS:\n"
 		+ "NAME: " + name + "\n"
-		+ "TYPE:" + typeName + "\n"
 		+ "FLYING: " + fly + "\n"
 		+ "HP: " + hp + "\n"
 		+ "ATTACK: " + atk + "\n"
@@ -167,32 +134,25 @@ public class Mech {
 
 	}
 
-	public int takeDamageDef(Mech o){
+	public int giveDamage(Mech o){
 
 		int dmg = 0;
 
-		if(o.getAtk() - this.getDef() > dmg){
+		if(this.getAtk() - o.getDef() > dmg){
 
-			dmg = o.getAtk() - this.getDef();
+			dmg = this.getAtk() - o.getDef();
 
 		}
 
 		return dmg;
 
 	}
-
-	public int takeDamageShield(Mech o){
-
-		int dmg = 0;
-
-		if(o.getAtk() - this.getDef() > dmg){
-
-			dmg = o.getAtk() - this.getDef();
-
-		}
-
-		return dmg;
-
+	
+	public void move(int newX, int newY){
+		
+		xPos = newX;
+		yPos = newY;
+		
 	}
-
+	
 }
