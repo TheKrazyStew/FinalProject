@@ -5,8 +5,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MapVisualizer extends JPanel {
-	public static  int size = 50, gridPixelSize= 10;
+	public static int size = 50, gridPixelSize= 10;
 	public static World w1 = new World("Map1");
+	
 	
 	public MapVisualizer() {
 		
