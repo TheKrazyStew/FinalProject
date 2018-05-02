@@ -87,7 +87,7 @@ public class MapMenu extends JPanel implements Tilesets {
 		add(btnLand);
 		
 		//Play Button
-		btnPlay.setBounds(200, 300, 100, 30);
+		btnPlay.setBounds(200, 285, 100, 30);
 		btnPlay.addActionListener(new ActionListener(){
 
 			@Override

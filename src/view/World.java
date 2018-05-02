@@ -54,7 +54,7 @@ public class World {
 		return genMap;
 
 	}
-	
+
 	public Tile[][] generate(Tile[] genList){
 		Tile[][] genMap = new Tile[size][size];
 		for (int i = 0; i < size; i++) {
@@ -71,4 +71,5 @@ public class World {
 	public String toString(){
 		return String.format("%s [&d x %d]",name, size, size);
 	}
+
 }

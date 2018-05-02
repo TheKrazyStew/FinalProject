@@ -332,6 +332,7 @@ public class MapGUI extends JPanel implements Tilesets{
 	public Tile[][] getTerrainGrid(){
 		return terrainGrid;
 	}
+	
 	public static void main(String[] args) {
 		
 		SwingUtilities.invokeLater(new Runnable() {
