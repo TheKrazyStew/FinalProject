@@ -10,8 +10,8 @@ public class MapGUI extends JPanel implements Tilesets{
 
 	public static final int NUM_ROWS = 50, NUM_COLS = 50,PREFERRED_GRID_SIZE_PIXELS = 10;
 	public static final Tile[] 
-			TERRAIN = {grassland,grassland,grassland,grassland,hills,hills,hills,valley,woods,woods,forest,forest,forest,forest,marsh},
-			TERRAIN2 = {sand,sand,sand,sand,dunes,dunes,quicksand,sValley};
+			TERRAIN = grassGenList,
+			TERRAIN2 = sandGenList;
 
 	public static final Tile[][] WORLDGENERATORS = {TERRAIN,TERRAIN2};
 
