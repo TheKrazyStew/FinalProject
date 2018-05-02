@@ -10,9 +10,8 @@ public class MapVisualizer extends JPanel implements Tilesets {
 	
 	
 	
-	public MapVisualizer() {
-		w1.generate(grassGenList);
-		Tile[][] currentMap = w1.getMap();
+	public MapVisualizer(World w) {
+		Tile[][] currentMap = w.getMap();
 		for(int i = 0; i < currentMap.length; i++){
 			for(int j = 0; j < currentMap[i].length; j++){
 				System.out.println(currentMap[i][j]);
@@ -43,7 +42,7 @@ public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				JFrame frame = new JFrame("Game");
-				MapVisualizer map = new MapVisualizer();
+				MapVisualizer map = new MapVisualizer(w1);
 				frame.getContentPane().add(map);
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.pack();

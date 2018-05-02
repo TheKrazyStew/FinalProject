@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class World {
 	private Tile[][] map;
+	private Tile[] tileset;
 	private int size;
 	private String name;
 
@@ -24,6 +25,12 @@ public class World {
 		this.name = name;
 		this.map = map;
 		size = map.length;
+	}
+	public World(String name, int size, Tile[] tileset) {
+		this.name = name;
+		this.size = size;
+		this.tileset=tileset;
+		
 	}
 
 	public int getSize() {
@@ -52,6 +59,7 @@ public class World {
 				System.out.println("generate:" + genMap[i][j]);
 			}
 		}
+		map = genMap;
 		return genMap;
 
 	}
@@ -66,6 +74,19 @@ public class World {
 				System.out.println("generate:" + genMap[i][j]);
 			}
 		}
+		map = genMap;
+		return genMap;
+	}
+		public Tile[][] generate(){
+			Tile[][] genMap = new Tile[size][size];
+			for (int i = 0; i < size; i++) {
+				for (int j = 0; j < size; j++) {
+					int randomTerrainIndex = (int)(tileset.length * Math.random());
+					Tile randomTile = tileset[randomTerrainIndex];
+					genMap[i][j] = randomTile; 
+					System.out.println("generate:" + genMap[i][j]);
+				}
+			}
 		map = genMap;
 		return genMap;
 
