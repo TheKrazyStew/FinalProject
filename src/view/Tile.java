@@ -26,4 +26,9 @@ public class Tile {
 	public Color getColor() {
 		return color;
 	}
+	public String toString(){
+		
+		return "Tile - " + name;
+		
+	}
 }
