@@ -10,8 +10,9 @@ import javax.swing.JButton;
 
 public class MapMenu extends JPanel implements Tilesets {
 	
-	World grass = new World("Grassland", 20),
-		  sand = new World("Desert", 50);
+	private World
+		grass = new World("Grassland", 20),
+		sand = new World("Desert", 50);
 	
 	/**
 	 * Create the panel.
@@ -20,11 +21,16 @@ public class MapMenu extends JPanel implements Tilesets {
 		setBackground(new Color(128, 0, 0));
 		setLayout(null);
 		
+		JButton btnGrassland = new JButton("GRASSLAND"),
+				btnDesert = new JButton("DESERT"),
+				btnLand = new JButton("LAND3"),
+				btnPlay = new JButton("PLAY");
+		
 		JLabel lblGrasslandPreview = new JLabel("Grassland Preview");
 		lblGrasslandPreview.setBounds(75, 32, 100, 171);
 		add(lblGrasslandPreview);
-		
-		JButton btnGrassland = new JButton("GRASSLAND");
+
+		//Grassland Button
 		btnGrassland.setBounds(75, 225, 100, 30);
 		btnGrassland.addActionListener(new ActionListener(){
 
@@ -32,6 +38,9 @@ public class MapMenu extends JPanel implements Tilesets {
 			public void actionPerformed(ActionEvent e) {
 				
 				grass.generate(grassGenList);
+				btnLand.setText("LAND3");
+				btnDesert.setText("DESERT");
+				btnGrassland.setText("SELECTED");
 				
 			}
 			
@@ -44,7 +53,7 @@ public class MapMenu extends JPanel implements Tilesets {
 		lblDesertPreview.setBounds(200, 32, 100, 171);
 		add(lblDesertPreview);
 		
-		JButton btnDesert = new JButton("DESERT");
+		//Desert Button
 		btnDesert.setBounds(200, 225, 100, 30);
 		btnDesert.addActionListener(new ActionListener(){
 
@@ -52,6 +61,9 @@ public class MapMenu extends JPanel implements Tilesets {
 			public void actionPerformed(ActionEvent e) {
 				
 				sand.generate(sandGenList);
+				btnLand.setText("LAND3");
+				btnDesert.setText("SELECTED");
+				btnGrassland.setText("GRASSLAND");
 				
 			}});
 		add(btnDesert);
@@ -60,17 +72,31 @@ public class MapMenu extends JPanel implements Tilesets {
 		lblLandPreview.setBounds(325, 32, 100, 171);
 		add(lblLandPreview);
 		
-		JButton btnLand = new JButton("LAND3");
+		//Land3 Button
 		btnLand.setBounds(325, 225, 100, 30);
 		btnLand.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				btnLand.setText("INCOMPLETE");
+				btnLand.setText("BROKEN :(");
+				btnDesert.setText("DESERT");
+				btnGrassland.setText("GRASSLAND");
 				
 			}});
 		add(btnLand);
+		
+		//Play Button
+		btnPlay.setBounds(200, 300, 100, 30);
+		btnPlay.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				
+			}});
+		add(btnPlay);
 		
 		
 		
