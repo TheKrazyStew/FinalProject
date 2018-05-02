@@ -12,9 +12,10 @@ public class MapVisualizer extends JPanel implements Tilesets {
 	
 	public MapVisualizer() {
 		w1.generate(grassGenList);
-		for(int i = 0; i < w1.getMap().length; i++){
-			for(int j = 0; j < w1.getMap()[i].length; j++){
-				System.out.println(w1.getMap()[i][j]);
+		Tile[][] currentMap = w1.getMap();
+		for(int i = 0; i < currentMap.length; i++){
+			for(int j = 0; j < currentMap[i].length; j++){
+				System.out.println(currentMap[i][j]);
 			}
 			System.out.println("\n");
 		}
