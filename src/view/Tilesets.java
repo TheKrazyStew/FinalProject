@@ -18,5 +18,6 @@ public interface Tilesets {
 			water = new Tile("river", new Color(51, 51, 204)),
 			road = new Tile("road", new Color(49, 52, 56)),
 			bridge = new Tile("bridge", new Color(98, 104, 102));
+	public static final Tile[] grassGenList =  {grassland,hills};
 	
 }
