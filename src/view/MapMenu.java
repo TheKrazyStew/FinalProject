@@ -11,8 +11,9 @@ import javax.swing.JButton;
 public class MapMenu extends JPanel implements Tilesets {
 	
 	private World
-		grass = new World("Grassland", 20),
-		sand = new World("Desert", 50);
+		grass = new World("Grassland", 20, grassGenList),
+		sand = new World("Desert", 50, sandGenList);
+	private PanelChangeListener listener;
 	
 	/**
 	 * Create the panel.
@@ -37,7 +38,7 @@ public class MapMenu extends JPanel implements Tilesets {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				grass.generate(grassGenList);
+				new MapVisualizer(grass);
 				btnLand.setText("LAND3");
 				btnDesert.setText("DESERT");
 				btnGrassland.setText("SELECTED");
@@ -79,7 +80,7 @@ public class MapMenu extends JPanel implements Tilesets {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				btnLand.setText("BROKEN :(");
+				btnLand.setText("LOCKED");
 				btnDesert.setText("DESERT");
 				btnGrassland.setText("GRASSLAND");
 				
@@ -93,7 +94,7 @@ public class MapMenu extends JPanel implements Tilesets {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				listener.changePanel("MapVisualizer");
 				
 			}});
 		add(btnPlay);
