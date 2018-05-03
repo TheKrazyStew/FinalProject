@@ -56,7 +56,6 @@ public class World {
 				int randomTerrainIndex = (int)(genList.size() * Math.random());
 				Tile randomTile = genList.get(randomTerrainIndex);
 				genMap[i][j] = randomTile; 
-				System.out.println("generate:" + genMap[i][j]);
 			}
 		}
 		map = genMap;
@@ -71,7 +70,6 @@ public class World {
 				int randomTerrainIndex = (int)(genList.length * Math.random());
 				Tile randomTile = genList[randomTerrainIndex];
 				genMap[i][j] = randomTile; 
-				System.out.println("generate:" + genMap[i][j]);
 			}
 		}
 		map = genMap;
@@ -84,7 +82,6 @@ public class World {
 					int randomTerrainIndex = (int)(tileset.length * Math.random());
 					Tile randomTile = tileset[randomTerrainIndex];
 					genMap[i][j] = randomTile; 
-					System.out.println("generate:" + genMap[i][j]);
 				}
 			}
 		map = genMap;

@@ -43,10 +43,12 @@ public class MainFrame extends JFrame implements PanelChangeListener, Tilesets{
 		if(panelName.equals("MapVisualizerGrass")){
 
 			newPanel = new MapVisualizer(grassLand);
+			setBounds(100, 100, 200, 200);
 
 		} else if(panelName.equals("MapVisualizerSand")){
 
 			newPanel = new MapVisualizer(sandLand);
+			setBounds(100, 100, 500, 500);
 
 		}
 

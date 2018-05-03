@@ -14,13 +14,6 @@ public class MapVisualizer extends JPanel implements Tilesets {
 	public MapVisualizer(World w) {
 		w.generate();
 		currentMap = w.getMap();
-		for(int i = 0; i < currentMap.length; i++){
-			for(int j = 0; j < currentMap[i].length; j++){
-				System.out.println(currentMap[i][j]);
-			}
-			System.out.println("\n");
-		}
-
 	}
 
 	public void paintComponent(Graphics g){
