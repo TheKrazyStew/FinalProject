@@ -9,16 +9,13 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 
 public class MapMenu extends JPanel implements Tilesets {
-	
-	private World
-		grass = new World("Grassland", 20, grassGenList),
-		sand = new World("Desert", 50, sandGenList);
+		
 	private PanelChangeListener listener;
 	
 	/**
 	 * Create the panel.
 	 */
-	public MapMenu() {
+	public MapMenu(PanelChangeListener listener) {
 		setBackground(new Color(128, 0, 0));
 		setLayout(null);
 		
@@ -38,7 +35,6 @@ public class MapMenu extends JPanel implements Tilesets {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				new MapVisualizer(grass);
 				btnLand.setText("LAND3");
 				btnDesert.setText("DESERT");
 				btnGrassland.setText("SELECTED");
@@ -61,7 +57,6 @@ public class MapMenu extends JPanel implements Tilesets {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				sand.generate(sandGenList);
 				btnLand.setText("LAND3");
 				btnDesert.setText("SELECTED");
 				btnGrassland.setText("GRASSLAND");
@@ -93,8 +88,15 @@ public class MapMenu extends JPanel implements Tilesets {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				if(btnGrassland.getText().equals("SELECTED")){
+					
+				listener.changePanel("MapVisualizerGrass");
 				
-				listener.changePanel("MapVisualizer");
+				} else if(btnDesert.getText().equals("SELECTED")){
+					
+				listener.changePanel("MapVisualizerSand");
+				
+				}
 				
 			}});
 		add(btnPlay);

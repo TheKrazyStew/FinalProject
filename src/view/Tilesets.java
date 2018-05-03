@@ -22,4 +22,8 @@ public interface Tilesets {
 	public static final Tile[] grassGenList =  {grass,grass,grass,grass,hills,hills,hills,valley,woods,woods,forest,forest,forest,forest,marsh};
 	public static final Tile[] sandGenList = {sand,sand,sand,sand,dunes,dunes,quicksand,sValley};
 	
+	public static final World
+		grassLand = new World("Grassland", 20, grassGenList),
+		sandLand = new World("Desert", 50, sandGenList);
+	
 }
