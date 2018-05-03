@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class MainFrame extends JFrame implements PanelChangeListener, Tilesets{
+public class MainFrame extends JFrame implements PanelChangeListener, Database{
 
 	private JPanel contentPane;
 

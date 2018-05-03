@@ -5,7 +5,7 @@ import java.awt.*;
 import java.math.*;
 
 @SuppressWarnings("unused")
-public class MapGUI extends JPanel implements Tilesets{
+public class MapGUI extends JPanel implements Database{
 
 
 	public static final int NUM_ROWS = 50, NUM_COLS = 50,PREFERRED_GRID_SIZE_PIXELS = 10;

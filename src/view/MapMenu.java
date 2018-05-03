@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
-public class MapMenu extends JPanel implements Tilesets {
+public class MapMenu extends JPanel implements Database {
 		
 	private PanelChangeListener listener;
 	
