@@ -2,7 +2,7 @@ package view;
 
 import java.awt.Color;
 
-public interface Tilesets {
+public interface Database {
 	
 	public static final Tile
 			grass = new Tile("grassland", new Color(41, 163, 41)), 
