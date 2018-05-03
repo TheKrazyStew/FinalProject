@@ -32,7 +32,7 @@ public class MapVisualizer extends JPanel implements Tilesets {
 			for (int j = 0; j < currentMap.length; j++) {
 				int x = i * size;
 				int y = j * size;
-				Color terrainColor = w1.getMap()[i][j].getColor();
+				Color terrainColor = currentMap[i][j].getColor();
 				g.setColor(terrainColor);
 				g.fillRect(x, y, size, size);
 			}
