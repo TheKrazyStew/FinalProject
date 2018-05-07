@@ -9,8 +9,6 @@ public class MapVisualizer extends JPanel implements Database {
 	public static World w1 = new World("Map1",20,grassGenList);
 	private static Tile[][] currentMap;
 
-
-
 	public MapVisualizer(World w) {
 		w.generate();
 		currentMap = w.getMap();

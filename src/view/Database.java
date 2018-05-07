@@ -26,4 +26,14 @@ public interface Database {
 		grassLand = new World("Grassland", 20, grassGenList),
 		sandLand = new World("Desert", 50, sandGenList);
 	
+	public static final Mech
+	pMech1,
+	pMech2,
+	pMech3,
+	pMech4,
+	eMech1,
+	eMech2,
+	eMech3,
+	eMech4;
+	
 }

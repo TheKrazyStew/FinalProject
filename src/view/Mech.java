@@ -1,13 +1,16 @@
 package view;
 
+import java.awt.Color;
+
 public class Mech {
 
 	private String name;
 	private int hp, atk, def, shield, move, xPos, yPos, evade, atkRange;
 	private boolean isFlying;
+	private Color team;
 
 	public Mech(String name, int hp, int atk, int def, int move, int evade,
-			boolean isFlying){
+			boolean isFlying, int xPos, int yPos, Color team){
 
 		this.name = name;
 		this.hp = hp;
@@ -16,8 +19,9 @@ public class Mech {
 		this.move = move;
 		this.isFlying = isFlying;
 		this.evade = evade;
-		xPos = 0;
-		yPos = 0;
+		this.xPos = xPos;
+		this.yPos = yPos;
+		this.team = team;
 
 	}
 
