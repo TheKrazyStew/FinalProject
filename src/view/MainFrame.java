@@ -43,12 +43,12 @@ public class MainFrame extends JFrame implements PanelChangeListener, Database{
 		if(panelName.equals("MapVisualizerGrass")){
 
 			newPanel = new MapVisualizer(grassLand);
-			setBounds(100, 100, 200, 200);
+			setBounds(100, 100, 320, 320);
 
 		} else if(panelName.equals("MapVisualizerSand")){
 
 			newPanel = new MapVisualizer(sandLand);
-			setBounds(100, 100, 500, 500);
+			setBounds(100, 100, 800, 800);
 
 		}
 
