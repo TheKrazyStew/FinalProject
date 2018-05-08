@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MapVisualizer extends JPanel implements Database {
-	public static int gridPixelSize= 10;
+	public static int gridPixelSize= 16;
 	public static World w1 = new World("Map1",20,grassGenList);
 	private static Tile[][] currentMap;
 
