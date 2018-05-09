@@ -2,6 +2,9 @@ package view;
 
 import javax.swing.JPanel;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -32,6 +35,18 @@ public class MechMenuPanel extends JPanel {
 		
 		JButton btnStop = new JButton("STOP");
 		btnStop.setBounds(25, 100, 100, 30);
+		btnStop.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				listener.changePanel("BlueMechDeselected");
+				
+			}
+			
+			
+			
+		});
 		add(btnStop);
 
 	}
