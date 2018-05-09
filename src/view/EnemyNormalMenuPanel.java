@@ -32,7 +32,7 @@ public class EnemyNormalMenuPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				listener.changePanel("RedMechDeselected");
+				listener.changePanel("BlueMechDeselected");
 				
 			}
 			
