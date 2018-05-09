@@ -8,10 +8,12 @@ import javax.swing.JButton;
 
 public class NormalMenuPanel extends JPanel {
 
+	private PanelChangeListener listener;
+	
 	/**
 	 * Create the panel.
 	 */
-	public NormalMenuPanel() {
+	public NormalMenuPanel(PanelChangeListener listener) {
 		setBackground(Color.BLUE);
 		setLayout(null);
 		

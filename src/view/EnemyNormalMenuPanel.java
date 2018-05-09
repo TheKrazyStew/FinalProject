@@ -7,11 +7,13 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
 public class EnemyNormalMenuPanel extends JPanel {
-
+	
+	private PanelChangeListener listener;
+	
 	/**
 	 * Create the panel.
 	 */
-	public EnemyNormalMenuPanel() {
+	public EnemyNormalMenuPanel(PanelChangeListener listener) {
 		setBackground(Color.RED);
 		setLayout(null);
 		

@@ -7,11 +7,13 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
 public class EnemyMechMenuPanel extends JPanel {
+	
+	private PanelChangeListener listener;
 
 	/**
 	 * Create the panel.
 	 */
-	public EnemyMechMenuPanel() {
+	public EnemyMechMenuPanel(PanelChangeListener listener) {
 		setBackground(Color.RED);
 		setLayout(null);
 		
