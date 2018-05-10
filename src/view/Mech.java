@@ -2,18 +2,20 @@ package view;
 
 import java.awt.Color;
 
-public class Mech {
+public class Mech{
 
 	private String name;
-	private int hp, atk, def, shield, move, xPos, yPos, evade, atkRange;
-	private boolean isFlying;
+	private int hp, atk, def, shield, move, xPos, yPos, evade, atkRange, maxHp;
+	private boolean isFlying, selected, canMove, canAttack;
 	private Color team;
+	private PanelChangeListener listener;
 
 	public Mech(String name, int hp, int atk, int def, int move, int evade,
 			boolean isFlying, int xPos, int yPos, Color team){
 
 		this.name = name;
 		this.hp = hp;
+		this.maxHp = hp;
 		this.atk = atk;
 		this.def = def;
 		this.move = move;
@@ -22,8 +24,13 @@ public class Mech {
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.team = team;
+		selected = false;
+		canMove = true;
+		canAttack = true;
 
 	}
+
+	//The stats & stat editors
 
 	public String getName() {
 		return name;
@@ -57,14 +64,6 @@ public class Mech {
 		this.def = def;
 	}
 
-	public int getShield() {
-		return shield;
-	}
-
-	public void setShield(int shield) {
-		this.shield = shield;
-	}
-
 	public int getMove() {
 		return move;
 	}
@@ -91,10 +90,6 @@ public class Mech {
 
 	public int getEvade() {
 		return evade;
-	}
-
-	public void setEvade(int evade) {
-		this.evade = evade;
 	}
 
 	public int getAtkRange() {
@@ -129,7 +124,7 @@ public class Mech {
 		return "UNIT STATS:\n"
 		+ "NAME: " + name + "\n"
 		+ "FLYING: " + fly + "\n"
-		+ "HP: " + hp + "\n"
+		+ "HP: " + hp + " / " + maxHp + "\n"
 		+ "ATTACK: " + atk + "\n"
 		+ "ARMOR: " + def + "\n"
 		+ "SHIELD: " + shield + "\n"
@@ -138,7 +133,9 @@ public class Mech {
 
 	}
 
-	public int giveDamage(Mech o){
+	//The options a mech has
+
+	public void giveDamage(Mech o){
 
 		int dmg = 0;
 
@@ -148,14 +145,97 @@ public class Mech {
 
 		}
 
-		return dmg;
+		if(Math.random() * 100 < o.getEvade()) {
+
+			dmg = 0;
+
+		}
+		
+		o.takeDamage(dmg);
 
 	}
-	
+
+	public void takeDamage(int damage){
+
+		hp -= damage;
+
+		if(hp < 0) {
+
+			hp = 0;
+
+		} if(damage > 10){
+			
+			System.out.println("NOW THAT'S A LOTTA DAMAGE!");
+			
+		}
+
+		die();
+
+	}
+
+	public void attack(Mech o){
+
+		if(canAttack && hp > 0){
+
+			this.giveDamage(o);
+			canAttack = false;
+
+		}
+
+	}
+
 	public void move(int newX, int newY){
+
+		if(canMove && Math.abs(newX - xPos) <= move &&
+				Math.abs(newY - yPos) <= move && hp > 0) {
+
+			xPos = newX;
+			yPos = newY;
+			canMove = false;
+
+		}
+
+	}
+
+	public void select(){
+
+		selected = true;
+
+	}
+
+	public void deselect(){
+
+		selected = false;
+
+	}
+
+	public boolean isSelected(){
+
+		return selected;
+
+	}
+
+	public int[] findMe(){
+
+		int[] out = {xPos,yPos};
+		return out;
+
+	}
+
+	public void die(){
+
+		if(hp <= 0) {
+
+			team = Color.DARK_GRAY;
+
+		}
+
+	}
+
+
+	public void showResults(){
 		
-		xPos = newX;
-		yPos = newY;
+		listener.changePanel("ShowResults");
 		
 	}
 	

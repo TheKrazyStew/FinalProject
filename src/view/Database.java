@@ -28,12 +28,15 @@ public interface Database {
 	
 	public static final Mech
 	pMech1 = new Mech("SC-WD",35,4,12,6,10,false,0,0,Color.BLUE),
-	pMech2 = new Mech("SC-LV",30,2,9,5,10,false,0,1,Color.BLUE),
+	pMech2 = new Mech("SC-LV",30,2,9,5,12,false,0,1,Color.BLUE),
 	pMech3 = new Mech("placeholder",10,10,10,10,10,false,1,1,Color.BLUE),
 	pMech4 = new Mech("placeholder",10,10,10,10,10,false,1,0,Color.BLUE),
-	eMech1 = new Mech("SC-UF",20,3,8,12,10,true,20,20,Color.RED),
-	eMech2 = new Mech("placeholder",10,10,10,10,10,false,21,20,Color.RED),
-	eMech3 = new Mech("placeholder",10,10,10,10,10,false,21,21,Color.RED),
-	eMech4 = new Mech("placeholder",10,10,10,10,10,false,20,21,Color.RED);
+	eMech1 = new Mech("SC-UF",20,3,8,12,20,true,19,19,Color.RED),
+	eMech2 = new Mech("placeholder",10,10,10,10,10,false,20,19,Color.RED),
+	eMech3 = new Mech("placeholder",10,10,10,10,10,false,20,20,Color.RED),
+	eMech4 = new Mech("placeholder",10,10,10,10,10,false,19,20,Color.RED);
+	
+	public static final Mech[] Battlers =
+		{pMech1, pMech2, pMech3, pMech4, eMech1, eMech2, eMech3, eMech4};
 	
 }
