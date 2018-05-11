@@ -238,14 +238,134 @@ public class MenuPanel extends JPanel implements Database {
 		
 		JButton buttonM2Atk = new JButton(currentArray[1].getName() + " - ATK");
 		buttonM2Atk.setBounds(126, 100, 125, 30);
+		buttonM2Atk.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				int newX = currentArray[1].getxPos(), newY = currentArray[1].getyPos();
+				Mech selectedMech = null;
+				switch(textDirection.getText()){
+				
+				case("N"):
+					newY --;
+				break;
+				case("S"):
+					newY ++;
+				break;
+				case("W"):
+					newX --;
+				case("E"):
+					newX ++;
+				break;
+				default:
+				break;
+				}
+				int[] positions = {newX, newY};
+				for(int i = 0; i<enemyArray.length; i++){
+					if(enemyArray[i].findMeArray() == positions){
+						selectedMech=enemyArray[i];
+					}
+				}
+				
+				if(selectedMech!=null){
+					currentArray[1].attack(selectedMech);
+				}
+				listener.changePanel("MapVisualizerGrass");
+				Controller.getController().getMapPanel().repaint();
+				
+				
+			}
+			
+		});
 		add(buttonM2Atk);
 		
 		JButton buttonM3Atk = new JButton(currentArray[2].getName() + " - ATK");
 		buttonM3Atk.setBounds(246, 100, 125, 30);
+		buttonM3Atk.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				int newX = currentArray[2].getxPos(), newY = currentArray[2].getyPos();
+				Mech selectedMech = null;
+				switch(textDirection.getText()){
+				
+				case("N"):
+					newY --;
+				break;
+				case("S"):
+					newY ++;
+				break;
+				case("W"):
+					newX --;
+				case("E"):
+					newX ++;
+				break;
+				default:
+				break;
+				}
+				int[] positions = {newX, newY};
+				for(int i = 0; i<enemyArray.length; i++){
+					if(enemyArray[i].findMeArray() == positions){
+						selectedMech=enemyArray[i];
+					}
+				}
+				
+				if(selectedMech!=null){
+					currentArray[2].attack(selectedMech);
+				}
+				listener.changePanel("MapVisualizerGrass");
+				Controller.getController().getMapPanel().repaint();
+				
+				
+			}
+			
+		});
 		add(buttonM3Atk);
 		
 		JButton buttonM4Atk = new JButton(currentArray[3].getName() + " - ATK");
 		buttonM4Atk.setBounds(370, 102, 125, 30);
+		buttonM1Atk.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				int newX = currentArray[3].getxPos(), newY = currentArray[3].getyPos();
+				Mech selectedMech = null;
+				switch(textDirection.getText()){
+				
+				case("N"):
+					newY --;
+				break;
+				case("S"):
+					newY ++;
+				break;
+				case("W"):
+					newX --;
+				case("E"):
+					newX ++;
+				break;
+				default:
+				break;
+				}
+				int[] positions = {newX, newY};
+				for(int i = 0; i<enemyArray.length; i++){
+					if(enemyArray[i].findMeArray() == positions){
+						selectedMech=enemyArray[i];
+					}
+				}
+				
+				if(selectedMech!=null){
+					currentArray[3].attack(selectedMech);
+				}
+				listener.changePanel("MapVisualizerGrass");
+				Controller.getController().getMapPanel().repaint();
+				
+				
+			}
+			
+		});
 		add(buttonM4Atk);
 		
 		JButton btnEndTurn = new JButton("END TURN");
@@ -270,6 +390,11 @@ public class MenuPanel extends JPanel implements Database {
 				buttonM3Atk.setText(currentArray[2].getName() + " - ATK");
 				buttonM4Atk.setText(currentArray[3].getName() + " - ATK");
 				
+				currentArray[0].startTurn();
+				currentArray[1].startTurn();
+				currentArray[2].startTurn();
+				currentArray[3].startTurn();
+				
 				
 				} else {
 					
@@ -286,6 +411,11 @@ public class MenuPanel extends JPanel implements Database {
 					buttonM2Atk.setText(currentArray[1].getName() + " - ATK");
 					buttonM3Atk.setText(currentArray[2].getName() + " - ATK");
 					buttonM4Atk.setText(currentArray[3].getName() + " - ATK");
+					
+					currentArray[0].startTurn();
+					currentArray[1].startTurn();
+					currentArray[2].startTurn();
+					currentArray[3].startTurn();
 					
 				}
 				
