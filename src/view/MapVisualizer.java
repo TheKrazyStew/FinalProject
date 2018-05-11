@@ -3,6 +3,8 @@ package view;
 import javax.swing.*;
 
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MapVisualizer extends JPanel implements Database {
 	
@@ -12,6 +14,22 @@ public class MapVisualizer extends JPanel implements Database {
 	public MapVisualizer(World w) {
 		w.generate();
 		currentMap = w.getMap();
+		addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent me) {
+                super.mouseClicked(me);
+                //Find out what we're trying to do here
+                for(int i = 0; i < Battlers.length; i++){
+                	
+                	if(Battlers[i].findMe().contains(me.getPoint())){
+                		
+                		
+                		
+                	}
+                	
+                }
+            }
+		});
 	}
 
 	public void paintComponent(Graphics g){

@@ -34,11 +34,11 @@ public interface Database {
 	//The generated Mechs and the "garage" (Mech[]) they live in
 	
 	public static final Mech
-	pMech1 = new Mech("SC-WD",35,4,12,6,10,false,0,0,Color.BLUE),
-	pMech2 = new Mech("SC-LV",30,2,9,5,12,false,0,1,Color.BLUE),
+	pMech1 = new Mech("SC-WD",35,12,4,6,10,false,0,0,Color.BLUE),
+	pMech2 = new Mech("SC-LV",30,9,2,5,12,false,0,1,Color.BLUE),
 	pMech3 = new Mech("placeholder",10,10,10,10,10,false,1,1,Color.BLUE),
 	pMech4 = new Mech("placeholder",10,10,10,10,10,false,1,0,Color.BLUE),
-	eMech1 = new Mech("SC-UF",20,3,8,12,20,true,18,18,Color.RED),
+	eMech1 = new Mech("SC-UF",20,8,3,12,20,true,18,18,Color.RED),
 	eMech2 = new Mech("placeholder",10,10,10,10,10,false,19,18,Color.RED),
 	eMech3 = new Mech("placeholder",10,10,10,10,10,false,19,19,Color.RED),
 	eMech4 = new Mech("placeholder",10,10,10,10,10,false,18,19,Color.RED);
@@ -46,12 +46,15 @@ public interface Database {
 	public static final Mech[] Battlers =
 		{pMech1, pMech2, pMech3, pMech4, eMech1, eMech2, eMech3, eMech4};
 	
+	//public static boolean anySelected = false;
+	//public static boolean currentTurnBlue = true;
+	
 	//From MapGUI
 	
 	public static final int NUM_ROWS = 50, NUM_COLS = 50,PREFERRED_GRID_SIZE_PIXELS = 10;
 	
 	//From MapVisualizer
 	
-	public static int gridPixelSize = 16;
+	public static final int gridPixelSize = 16;
 	
 }

@@ -1,11 +1,14 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Shape;
+import java.awt.geom.Rectangle2D;
 
-public class Mech{
+public class Mech implements Database{
 
 	private String name;
-	private int hp, atk, def, shield, move, xPos, yPos, evade, atkRange, maxHp;
+	private int hp, atk, def, shield, move, xPos, yPos, evade, atkRange, maxHp,
+		xRange, yRange;
 	private boolean isFlying, selected, canMove, canAttack;
 	private Color team;
 	private PanelChangeListener listener;
@@ -23,6 +26,8 @@ public class Mech{
 		this.evade = evade;
 		this.xPos = xPos;
 		this.yPos = yPos;
+		xRange = xPos + gridPixelSize;
+		yRange = yPos + gridPixelSize;
 		this.team = team;
 		selected = false;
 		canMove = true;
@@ -78,6 +83,7 @@ public class Mech{
 
 	public void setxPos(int xPos) {
 		this.xPos = xPos;
+		xRange = xPos + gridPixelSize;
 	}
 
 	public int getyPos() {
@@ -86,6 +92,7 @@ public class Mech{
 
 	public void setyPos(int yPos) {
 		this.yPos = yPos;
+		yRange = yPos + gridPixelSize;
 	}
 
 	public int getEvade() {
@@ -198,6 +205,8 @@ public class Mech{
 			xPos = newX;
 			yPos = newY;
 			canMove = false;
+			xRange = xPos + gridPixelSize;
+			yRange = yPos + gridPixelSize;
 
 		}
 
@@ -221,10 +230,10 @@ public class Mech{
 
 	}
 
-	public int[] findMe(){
+	public Shape findMe(){
 
-		int[] out = {xPos,yPos};
-		return out;
+		int[] out = {xPos,yPos,xRange,yRange};
+		return new Rectangle2D.Double(xPos, yPos, gridPixelSize, gridPixelSize);
 
 	}
 
