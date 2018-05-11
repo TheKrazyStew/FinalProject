@@ -132,7 +132,13 @@ public class Mech{
 		+ "RANGE: " + atkRange;
 
 	}
-
+	
+	public Color getTeam(){
+		
+		return team;
+		
+	}
+	
 	//The options a mech has
 
 	public void giveDamage(Mech o){
@@ -231,7 +237,6 @@ public class Mech{
 		}
 
 	}
-
 
 	public void showResults(){
 		

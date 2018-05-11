@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MapVisualizer extends JPanel implements Database {
-	public static int gridPixelSize= 16;
+	
 	public static World w1 = new World("Map1",20,grassGenList);
 	private static Tile[][] currentMap;
 
@@ -28,7 +28,14 @@ public class MapVisualizer extends JPanel implements Database {
 				g.fillRect(x, y, size, size);
 			}
 		}
-
+		
+		for(Mech mech : Battlers){
+			
+			g.setColor(mech.getTeam());
+			g.fillOval(mech.getxPos() * size, mech.getyPos() * size,
+					size, size);
+			
+		}
 	}
 
 	/* public static void main(String[] args) {

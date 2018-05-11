@@ -4,6 +4,8 @@ import java.awt.Color;
 
 public interface Database {
 	
+	//All the different tiles
+	
 	public static final Tile
 			grass = new Tile("grassland", new Color(41, 163, 41)), 
 			hills = new Tile("hills", new Color(31, 122, 31)),
@@ -19,24 +21,37 @@ public interface Database {
 			road = new Tile("road", new Color(49, 52, 56)),
 			bridge = new Tile("bridge", new Color(98, 104, 102)),
 			city = new Tile("city", new Color(80, 80, 80));
+	
 	public static final Tile[] grassGenList =  {grass,grass,grass,grass,hills,hills,hills,valley,woods,woods,forest,forest,forest,forest,marsh};
 	public static final Tile[] sandGenList = {sand,sand,sand,sand,dunes,dunes,quicksand,sValley};
 	
+	//The generate-able worlds
+	
 	public static final World
-		grassLand = new World("Grassland", 20, grassGenList),
-		sandLand = new World("Desert", 50, sandGenList);
+			grassLand = new World("Grassland", 20, grassGenList),
+			sandLand = new World("Desert", 50, sandGenList);
+	
+	//The generated Mechs and the "garage" (Mech[]) they live in
 	
 	public static final Mech
 	pMech1 = new Mech("SC-WD",35,4,12,6,10,false,0,0,Color.BLUE),
 	pMech2 = new Mech("SC-LV",30,2,9,5,12,false,0,1,Color.BLUE),
 	pMech3 = new Mech("placeholder",10,10,10,10,10,false,1,1,Color.BLUE),
 	pMech4 = new Mech("placeholder",10,10,10,10,10,false,1,0,Color.BLUE),
-	eMech1 = new Mech("SC-UF",20,3,8,12,20,true,19,19,Color.RED),
-	eMech2 = new Mech("placeholder",10,10,10,10,10,false,20,19,Color.RED),
-	eMech3 = new Mech("placeholder",10,10,10,10,10,false,20,20,Color.RED),
-	eMech4 = new Mech("placeholder",10,10,10,10,10,false,19,20,Color.RED);
+	eMech1 = new Mech("SC-UF",20,3,8,12,20,true,18,18,Color.RED),
+	eMech2 = new Mech("placeholder",10,10,10,10,10,false,19,18,Color.RED),
+	eMech3 = new Mech("placeholder",10,10,10,10,10,false,19,19,Color.RED),
+	eMech4 = new Mech("placeholder",10,10,10,10,10,false,18,19,Color.RED);
 	
 	public static final Mech[] Battlers =
 		{pMech1, pMech2, pMech3, pMech4, eMech1, eMech2, eMech3, eMech4};
+	
+	//From MapGUI
+	
+	public static final int NUM_ROWS = 50, NUM_COLS = 50,PREFERRED_GRID_SIZE_PIXELS = 10;
+	
+	//From MapVisualizer
+	
+	public static int gridPixelSize = 16;
 	
 }

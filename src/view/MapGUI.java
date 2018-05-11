@@ -7,8 +7,6 @@ import java.math.*;
 @SuppressWarnings("unused")
 public class MapGUI extends JPanel implements Database{
 
-
-	public static final int NUM_ROWS = 50, NUM_COLS = 50,PREFERRED_GRID_SIZE_PIXELS = 10;
 	public static final Tile[] 
 			TERRAIN = grassGenList,
 			TERRAIN2 = sandGenList;
