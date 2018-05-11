@@ -2,7 +2,7 @@ package view;
 
 import java.awt.Color;
 
-public abstract class MechGarage {
+public class MechGarage {
 	
 	public static Mech
 	pMech1 = new Mech("SC-WD",35,12,4,6,10,false,0,0,Color.BLUE),
@@ -19,3 +19,4 @@ public abstract class MechGarage {
 		{pMech1, pMech2, pMech3, pMech4, eMech1, eMech2, eMech3, eMech4};
 	
 }
+
