@@ -201,13 +201,12 @@ public class Mech implements Database{
 
 		if(canMove && Math.abs(newX - xPos) <= move &&
 				Math.abs(newY - yPos) <= move && hp > 0) {
-			int tempX = xPos;
-			int tempY = yPos;
-			xPos = newX;
-			yPos = newY;
+			int tempX = xPos; //For debugging
+			int tempY = yPos; //For debugging
+			setxPos(newX);
+			setyPos(newY);
 			canMove = false;
-			xRange = xPos + gridPixelSize;
-			yRange = yPos + gridPixelSize;
+			//Debug: See if the thingy has moved
 			if(tempX != xPos && tempY != yPos){
 				
 				System.out.println("Moved.");

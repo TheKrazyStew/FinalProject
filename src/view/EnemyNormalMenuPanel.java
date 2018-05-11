@@ -12,7 +12,7 @@ import javax.swing.JButton;
 public class EnemyNormalMenuPanel extends JPanel implements Database{
 	
 	private PanelChangeListener listener;
-	private MapVisualizer mechs;
+	private MechGarage mechs;
 	
 	/**
 	 * Create the panel.

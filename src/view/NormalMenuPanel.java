@@ -15,7 +15,7 @@ public class NormalMenuPanel extends JPanel implements Database {
 	private PanelChangeListener listener;
 	private JTextField textDirection;
 	private JTextField textSpaces;
-	private MapVisualizer mechs;
+	private MechGarage mechs;
 	
 	/**
 	 * Create the panel.
