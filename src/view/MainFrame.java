@@ -22,6 +22,7 @@ public class MainFrame extends JFrame implements PanelChangeListener, Database{
 				}
 			}
 		});
+		//MenuFrame.main(args);
 	}
 
 	/**
@@ -40,6 +41,8 @@ public class MainFrame extends JFrame implements PanelChangeListener, Database{
 	public void changePanel(String panelName) {
 
 		JPanel newPanel = null;
+		MenuFrame fr = new MenuFrame();
+		fr.setBounds(900, 100, 150, 150);
 
 		if(panelName.equals("MapVisualizerGrass")){
 
@@ -52,9 +55,11 @@ public class MainFrame extends JFrame implements PanelChangeListener, Database{
 			setBounds(100, 100, 800, 800);
 
 		}
-
+		
+		fr.setVisible(true);
+		
 		if (newPanel!= null) {
-
+			
 			setContentPane(newPanel);
 			validate();
 

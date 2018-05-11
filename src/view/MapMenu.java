@@ -88,6 +88,7 @@ public class MapMenu extends JPanel implements Database {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				if(btnGrassland.getText().equals("SELECTED")){
 					
 				listener.changePanel("MapVisualizerGrass");
@@ -97,7 +98,7 @@ public class MapMenu extends JPanel implements Database {
 				listener.changePanel("MapVisualizerSand");
 				
 				}
-				
+
 			}});
 		add(btnPlay);
 		

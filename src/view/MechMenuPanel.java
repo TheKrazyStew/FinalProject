@@ -33,8 +33,12 @@ public class MechMenuPanel extends JPanel {
 		btnMove.setBounds(25, 75, 100, 30);
 		add(btnMove);
 		
+		JButton btnStats = new JButton("VIEW STATS");
+		btnStats.setBounds(25, 100, 100, 30);
+		add(btnStats);
+		
 		JButton btnStop = new JButton("STOP");
-		btnStop.setBounds(25, 100, 100, 30);
+		btnStop.setBounds(25, 125, 100, 30);
 		btnStop.addActionListener(new ActionListener(){
 
 			@Override
