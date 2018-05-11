@@ -15,7 +15,11 @@ public class MechGarage {
 	eMech3 = new Mech("SC-AT",15,10,3,10,10,false,19,19,Color.RED),
 	eMech4 = new Mech("SC-FO",20,8,3,12,20,true,18,19,Color.RED);
 
-	public static Mech[] Battlers =
+	public static Mech[] BlueBattlers =
+		{pMech1, pMech2, pMech3, pMech4},
+		RedBattlers =
+		{eMech1, eMech2, eMech3, eMech4},
+		Battlers =
 		{pMech1, pMech2, pMech3, pMech4, eMech1, eMech2, eMech3, eMech4};
 	
 }
