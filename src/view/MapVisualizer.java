@@ -15,6 +15,8 @@ public class MapVisualizer extends JPanel implements Database {
 	public MapVisualizer(World w) {
 		w.generate();
 		currentMap = w.getMap();
+		
+		Controller.getController().setMapPanel(this);
 	/*	addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent me) {

@@ -207,15 +207,16 @@ public class Mech implements Database{
 			setyPos(newY);
 			canMove = false;
 			//Debug: See if the thingy has moved
-			if(tempX != xPos && tempY != yPos){
+			/* if(tempX != xPos && tempY != yPos){
 				
 				System.out.println("Moved.");
 				
 			} else {
 				
 				System.out.println("Could not move.");
+				System.out.println(xPos + "," + yPos);
 				
-			}
+			} */
 		}
 
 	}

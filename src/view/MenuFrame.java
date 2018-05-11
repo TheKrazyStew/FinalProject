@@ -57,11 +57,11 @@ public class MenuFrame extends JFrame implements PanelChangeListener{
 		break;
 		
 		case("RedMechSelected"):
-			newPanel = new EnemyMechMenuPanel(this);
+			//newPanel = new EnemyMechMenuPanel(this);
 		break;
 		
 		case("RedMechDeselected"):
-			newPanel = new EnemyNormalMenuPanel(this);
+			//newPanel = new EnemyNormalMenuPanel(this);
 		break;
 		}
 		if (newPanel!= null) {

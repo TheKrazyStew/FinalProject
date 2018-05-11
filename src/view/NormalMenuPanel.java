@@ -23,6 +23,8 @@ public class NormalMenuPanel extends JPanel implements Database {
 		setBackground(Color.BLUE);
 		setLayout(null);
 		
+		Controller.getController().setMenuPanel(this);;
+		
 		JLabel lblIntroText = new JLabel("Select an action.");
 		lblIntroText.setBounds(180, 25, 150, 20);
 		lblIntroText.setHorizontalAlignment(SwingConstants.CENTER);
@@ -57,7 +59,7 @@ public class NormalMenuPanel extends JPanel implements Database {
 				}
 				
 				MechGarage.pMech1.move(newX, newY);
-				
+				Controller.getController().getMapPanel().repaint();
 				
 			}
 			
@@ -93,6 +95,7 @@ public class NormalMenuPanel extends JPanel implements Database {
 				}
 				
 				MechGarage.pMech2.move(newX, newY);
+				Controller.getController().getMapPanel().repaint();
 				
 				
 			}
@@ -129,6 +132,7 @@ public class NormalMenuPanel extends JPanel implements Database {
 				}
 				
 				MechGarage.pMech3.move(newX, newY);
+				Controller.getController().getMapPanel().repaint();
 				
 				
 			}
@@ -166,6 +170,7 @@ public class NormalMenuPanel extends JPanel implements Database {
 				
 				MechGarage.pMech4.move(newX, newY);
 				listener.changePanel("MapVisualizerGrass");
+				Controller.getController().getMapPanel().repaint();
 				
 				
 			}
