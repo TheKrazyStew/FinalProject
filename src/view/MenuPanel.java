@@ -192,6 +192,22 @@ public class MenuPanel extends JPanel implements Database {
 		textSpaces.setBounds(370, 6, 130, 26);
 		add(textSpaces);
 		
+		JLabel lblNewLabel = new JLabel("HP: " + currentArray[0].getHp());
+		lblNewLabel.setBounds(36, 58, 61, 16);
+		add(lblNewLabel);
+		
+		JLabel label_2 = new JLabel("HP: " + currentArray[1].getHp());
+		label_2.setBounds(157, 58, 61, 16);
+		add(label_2);
+		
+		JLabel label = new JLabel("HP: " + currentArray[2].getHp());
+		label.setBounds(279, 58, 61, 16);
+		add(label);
+		
+		JLabel label_1 = new JLabel("HP: " + currentArray[3].getHp());
+		label_1.setBounds(401, 58, 61, 16);
+		add(label_1);
+		
 		JButton buttonM1Atk = new JButton(currentArray[0].getName() + " - ATK");
 		buttonM1Atk.setBounds(6, 100, 125, 30);
 		add(buttonM1Atk);
