@@ -32,7 +32,7 @@ public class MenuFrame extends JFrame implements PanelChangeListener{
 	 */
 	public MenuFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(600, 100, 150, 150);
+		setBounds(600, 100, 500, 200);
 		contentPane = new NormalMenuPanel(this);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -42,7 +42,7 @@ public class MenuFrame extends JFrame implements PanelChangeListener{
 	@Override
 	public void changePanel(String panelName) {
 		
-		setBounds(900, 100, 150, 150);
+		setBounds(600, 100, 500, 200);
 		
 		JPanel newPanel = null;
 
