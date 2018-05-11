@@ -255,7 +255,7 @@ public class Mech implements Database{
 	
 	public int[] findMeArray(){
 		
-		int[] out = {xPos,yPos,xRange,yRange};
+		int[] out = {xPos,yPos};
 		return out;
 		
 	}
