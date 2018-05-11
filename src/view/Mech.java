@@ -248,10 +248,16 @@ public class Mech implements Database{
 
 	//The Mech's Hitbox
 	public Shape findMe(){
-
-		int[] out = {xPos,yPos,xRange,yRange};
+		
 		return new Rectangle2D.Double(xPos, yPos, gridPixelSize, gridPixelSize);
 
+	}
+	
+	public int[] findMeArray(){
+		
+		int[] out = {xPos,yPos,xRange,yRange};
+		return out;
+		
 	}
 
 	public void die(){
