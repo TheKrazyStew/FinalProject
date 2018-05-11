@@ -8,7 +8,7 @@ public class Mech implements Database{
 
 	private String name;
 	private int hp, atk, def, shield, move, xPos, yPos, evade, atkRange, maxHp,
-		xRange, yRange;
+	xRange, yRange;
 	private boolean isFlying, selected, canMove, canAttack;
 	private Color team;
 	private PanelChangeListener listener;
@@ -139,13 +139,13 @@ public class Mech implements Database{
 		+ "RANGE: " + atkRange;
 
 	}
-	
+
 	public Color getTeam(){
-		
+
 		return team;
-		
+
 	}
-	
+
 	//The options a mech has
 
 	public void giveDamage(Mech o){
@@ -163,7 +163,7 @@ public class Mech implements Database{
 			dmg = 0;
 
 		}
-		
+
 		o.takeDamage(dmg);
 
 	}
@@ -177,9 +177,9 @@ public class Mech implements Database{
 			hp = 0;
 
 		} if(damage > 10){
-			
+
 			System.out.println("NOW THAT'S A LOTTA DAMAGE!");
-			
+
 		}
 
 		die();
@@ -201,13 +201,22 @@ public class Mech implements Database{
 
 		if(canMove && Math.abs(newX - xPos) <= move &&
 				Math.abs(newY - yPos) <= move && hp > 0) {
-
-			xPos = newX;
-			yPos = newY;
+			int tempX = xPos; //For debugging
+			int tempY = yPos; //For debugging
+			setxPos(newX);
+			setyPos(newY);
 			canMove = false;
-			xRange = xPos + gridPixelSize;
-			yRange = yPos + gridPixelSize;
-
+			//Debug: See if the thingy has moved
+			/* if(tempX != xPos && tempY != yPos){
+				
+				System.out.println("Moved.");
+				
+			} else {
+				
+				System.out.println("Could not move.");
+				System.out.println(xPos + "," + yPos);
+				
+			} */
 		}
 
 	}
@@ -229,7 +238,15 @@ public class Mech implements Database{
 		return selected;
 
 	}
-//The Mech's Hitbox
+
+	public void startTurn(){
+
+		canMove = true;
+		canAttack = true;
+
+	}
+
+	//The Mech's Hitbox
 	public Shape findMe(){
 
 		int[] out = {xPos,yPos,xRange,yRange};
@@ -248,9 +265,9 @@ public class Mech implements Database{
 	}
 
 	public void showResults(){
-		
+
 		listener.changePanel("ShowResults");
-		
+
 	}
-	
+
 }

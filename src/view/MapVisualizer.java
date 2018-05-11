@@ -10,11 +10,14 @@ public class MapVisualizer extends JPanel implements Database {
 	
 	public static World w1 = new World("Map1",20,grassGenList);
 	private static Tile[][] currentMap;
+	private MechGarage mechs;
 
 	public MapVisualizer(World w) {
 		w.generate();
 		currentMap = w.getMap();
-		addMouseListener(new MouseAdapter() {
+		
+		Controller.getController().setMapPanel(this);
+	/*	addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent me) {
                 super.mouseClicked(me);
@@ -29,7 +32,7 @@ public class MapVisualizer extends JPanel implements Database {
                 	
                 }
             }
-		});
+		}); */
 	}
 
 	public void paintComponent(Graphics g){
@@ -47,7 +50,7 @@ public class MapVisualizer extends JPanel implements Database {
 			}
 		}
 		
-		for(Mech mech : Battlers){
+		for(Mech mech : mechs.Battlers){
 			
 			g.setColor(mech.getTeam());
 			g.fillOval(mech.getxPos() * size, mech.getyPos() * size,

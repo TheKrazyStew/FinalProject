@@ -42,7 +42,7 @@ public class MainFrame extends JFrame implements PanelChangeListener, Database{
 
 		JPanel newPanel = null;
 		MenuFrame fr = new MenuFrame();
-		fr.setBounds(900, 100, 150, 150);
+		fr.setBounds(900, 100, 500, 200);
 
 		if(panelName.equals("MapVisualizerGrass")){
 
