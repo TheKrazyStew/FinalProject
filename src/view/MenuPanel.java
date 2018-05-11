@@ -195,6 +195,46 @@ public class MenuPanel extends JPanel implements Database {
 		JButton buttonM1Atk = new JButton(currentArray[0].getName() + " - ATK");
 		buttonM1Atk.setBounds(6, 100, 125, 30);
 		add(buttonM1Atk);
+		buttonM1Atk.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				int newX = currentArray[0].getxPos(), newY = currentArray[0].getyPos();
+				Mech selectedMech = null;
+				switch(textDirection.getText()){
+				
+				case("N"):
+					newY --;
+				break;
+				case("S"):
+					newY ++;
+				break;
+				case("W"):
+					newX --;
+				case("E"):
+					newX ++;
+				break;
+				default:
+				break;
+				}
+				int[] positions = {newX, newY};
+				for(int i = 0; i<enemyArray.length; i++){
+					if(enemyArray[i].findMeArray() == positions){
+						selectedMech=enemyArray[i];
+					}
+				}
+				
+				if(selectedMech!=null){
+					currentArray[0].attack(selectedMech);
+				}
+				listener.changePanel("MapVisualizerGrass");
+				Controller.getController().getMapPanel().repaint();
+				
+				
+			}
+			
+		});
 		
 		JButton buttonM2Atk = new JButton(currentArray[1].getName() + " - ATK");
 		buttonM2Atk.setBounds(126, 100, 125, 30);
