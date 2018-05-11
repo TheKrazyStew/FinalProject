@@ -6,7 +6,7 @@ public interface Database {
 	
 	//All the different tiles
 	
-	public static final Tile
+	public static Tile
 			grass = new Tile("grassland", new Color(41, 163, 41)), 
 			hills = new Tile("hills", new Color(31, 122, 31)),
 			woods = new Tile("woods", new Color(0, 153, 51)),
@@ -22,18 +22,18 @@ public interface Database {
 			bridge = new Tile("bridge", new Color(98, 104, 102)),
 			city = new Tile("city", new Color(80, 80, 80));
 	
-	public static final Tile[] grassGenList =  {grass,grass,grass,grass,hills,hills,hills,valley,woods,woods,forest,forest,forest,forest,marsh};
-	public static final Tile[] sandGenList = {sand,sand,sand,sand,dunes,dunes,quicksand,sValley};
+	public static  Tile[] grassGenList =  {grass,grass,grass,grass,hills,hills,hills,valley,woods,woods,forest,forest,forest,forest,marsh};
+	public static  Tile[] sandGenList = {sand,sand,sand,sand,dunes,dunes,quicksand,sValley};
 	
 	//The generate-able worlds
 	
-	public static final World
+	public static  World
 			grassLand = new World("Grassland", 20, grassGenList),
 			sandLand = new World("Desert", 50, sandGenList);
 	
 	//The generated Mechs and the "garage" (Mech[]) they live in
 	
-	public static final Mech
+	public static Mech
 	pMech1 = new Mech("SC-WD",35,12,4,6,10,false,0,0,Color.BLUE),
 	pMech2 = new Mech("SC-LV",30,9,2,5,12,false,0,1,Color.BLUE),
 	pMech3 = new Mech("placeholder",10,10,10,10,10,false,1,1,Color.BLUE),
