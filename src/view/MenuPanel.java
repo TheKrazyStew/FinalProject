@@ -10,7 +10,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-public class NormalMenuPanel extends JPanel implements Database {
+public class MenuPanel extends JPanel implements Database {
 
 	private PanelChangeListener listener;
 	private JTextField textDirection;
@@ -19,7 +19,7 @@ public class NormalMenuPanel extends JPanel implements Database {
 	/**
 	 * Create the panel.
 	 */
-	public NormalMenuPanel(PanelChangeListener listener) {
+	public MenuPanel(PanelChangeListener listener) {
 		setBackground(Color.BLUE);
 		setLayout(null);
 		

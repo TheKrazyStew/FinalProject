@@ -33,7 +33,7 @@ public class MenuFrame extends JFrame implements PanelChangeListener{
 	public MenuFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(600, 100, 500, 200);
-		contentPane = new NormalMenuPanel(this);
+		contentPane = new MenuPanel(this);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
@@ -47,13 +47,9 @@ public class MenuFrame extends JFrame implements PanelChangeListener{
 		JPanel newPanel = null;
 
 		switch(panelName){
-
-		case("BlueMechSelected"):
-			newPanel = new MechMenuPanel(this);
-		break;
 		
 		case("BlueMechDeselected"):
-			newPanel = new NormalMenuPanel(this);
+			newPanel = new MenuPanel(this);
 		break;
 		
 		case("RedMechSelected"):

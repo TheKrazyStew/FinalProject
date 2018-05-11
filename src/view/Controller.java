@@ -4,7 +4,7 @@ public class Controller {
 	
 	private static Controller controller;
 	private MapVisualizer mapPanel;
-	private NormalMenuPanel menuPanel;
+	private MenuPanel menuPanel;
 	
 	private Controller(){
 		
@@ -25,11 +25,11 @@ public class Controller {
 		this.mapPanel = mapPanel;
 	}
 
-	public NormalMenuPanel getMenuPanel() {
+	public MenuPanel getMenuPanel() {
 		return menuPanel;
 	}
 
-	public void setMenuPanel(NormalMenuPanel menuPanel) {
+	public void setMenuPanel(MenuPanel menuPanel) {
 		this.menuPanel = menuPanel;
 	}
 	
