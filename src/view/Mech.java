@@ -229,7 +229,7 @@ public class Mech implements Database{
 		return selected;
 
 	}
-
+//The Mech's Hitbox
 	public Shape findMe(){
 
 		int[] out = {xPos,yPos,xRange,yRange};
