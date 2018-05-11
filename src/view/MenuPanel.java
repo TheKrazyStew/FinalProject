@@ -16,6 +16,7 @@ public class MenuPanel extends JPanel implements Database {
 	private JTextField textDirection;
 	private JTextField textSpaces;
 	private Mech[] currentArray = MechGarage.BlueBattlers;
+	private Mech[] enemyArray = MechGarage.RedBattlers;
 	
 	/**
 	 * Create the panel.
@@ -217,6 +218,7 @@ public class MenuPanel extends JPanel implements Database {
 				if(currentArray.equals(MechGarage.BlueBattlers)){
 					
 				currentArray = MechGarage.RedBattlers;
+				enemyArray = MechGarage.BlueBattlers;
 				setBackground(Color.RED);
 				buttonM1Move.setText(currentArray[0].getName() + " - MOVE ");
 				buttonM2Move.setText(currentArray[1].getName() + " - MOVE ");
@@ -232,6 +234,7 @@ public class MenuPanel extends JPanel implements Database {
 				} else {
 					
 					currentArray = MechGarage.BlueBattlers;
+					enemyArray = MechGarage.RedBattlers;
 					setBackground(Color.BLUE);
 					
 					buttonM1Move.setText(currentArray[0].getName() + " - MOVE ");
